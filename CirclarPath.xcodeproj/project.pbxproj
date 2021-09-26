@@ -13,6 +13,7 @@
 		24F6988126FF1FB60003F499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F6987F26FF1FB60003F499 /* Main.storyboard */; };
 		24F6988326FF1FB90003F499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F6988226FF1FB90003F499 /* Assets.xcassets */; };
 		24F6988626FF1FB90003F499 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F6988426FF1FB90003F499 /* LaunchScreen.storyboard */; };
+		24F6988E27004C980003F499 /* CircularPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6988D27004C980003F499 /* CircularPathView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		24F6988226FF1FB90003F499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24F6988526FF1FB90003F499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24F6988726FF1FB90003F499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24F6988D27004C980003F499 /* CircularPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularPathView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				24F6987926FF1FB60003F499 /* AppDelegate.swift */,
 				24F6987B26FF1FB60003F499 /* SceneDelegate.swift */,
 				24F6987D26FF1FB60003F499 /* ViewController.swift */,
+				24F6988D27004C980003F499 /* CircularPathView.swift */,
 				24F6987F26FF1FB60003F499 /* Main.storyboard */,
 				24F6988226FF1FB90003F499 /* Assets.xcassets */,
 				24F6988426FF1FB90003F499 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				24F6987E26FF1FB60003F499 /* ViewController.swift in Sources */,
 				24F6987A26FF1FB60003F499 /* AppDelegate.swift in Sources */,
+				24F6988E27004C980003F499 /* CircularPathView.swift in Sources */,
 				24F6987C26FF1FB60003F499 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
