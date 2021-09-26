@@ -32,25 +32,35 @@ final class CircularPathView: UIView {
         // pathの設定
         let bezierPath = UIBezierPath(arcCenter: CGPoint(x: bounds.size.width / 2, y: bounds.size.height / 2), radius: radius, startAngle: startPoint, endAngle: endPoint, clockwise: true)
 
+        // 背景の線の設定
         // CGPath()を使うと四角とかにもできる
         backGroundPathLayer.path = bezierPath.cgPath
-        backGroundPathLayer.lineWidth = 10
+        backGroundPathLayer.lineWidth = 20
+        // 線の内側を塗りつぶす色
         backGroundPathLayer.fillColor = UIColor.clear.cgColor
+        // 線の色
         backGroundPathLayer.strokeColor = UIColor.systemGray4.cgColor
-        layer.addSublayer(backGroundPathLayer)
 
+        
+        // アニメーションさせる線の設定
         progressLayer.path = bezierPath.cgPath
-        progressLayer.lineWidth = 5
+        progressLayer.lineWidth = 10
         // 線を描き始める場所0~1までの値を取る
         progressLayer.strokeStart = 0
-        // 線を描き終える場所0~1までの値を取る
-        // ただし、func progressAnimation(duration: Int)を使う場合はこのポイントで終わらなくなってしまう
+        // 線を描き終える場所0~1までの値を取る。ただし、func progressAnimation(duration: Int)を使う場合はこのポイントで終わらなくなってしまう
         // func progressAnimation(duration: Int)と併用する場合は0にしておくと良い
         progressLayer.strokeEnd = 0
+        // 線の内側を塗りつぶす色
         progressLayer.fillColor = UIColor.clear.cgColor
+        // 線の色
         progressLayer.strokeColor = UIColor.orange.cgColor
         // 設定するとタイマーのアニメションを点線で書ける
-        progressLayer.lineDashPattern = [20, 10]
+        // progressLayer.lineDashPattern = [20, 10]
+        // 線の先を丸くする
+        progressLayer.lineCap = .round
+
+        // layerの追加
+        layer.addSublayer(backGroundPathLayer)
         layer.addSublayer(progressLayer)
     }
 
@@ -63,6 +73,7 @@ final class CircularPathView: UIView {
         circularProgressAnimation.toValue = 1.0
         circularProgressAnimation.fillMode = .forwards
         circularProgressAnimation.isRemovedOnCompletion = false
+        layer.speed = 1.0
         progressLayer.add(circularProgressAnimation, forKey: "progress")
     }
 
@@ -81,7 +92,8 @@ final class CircularPathView: UIView {
         layer.beginTime = timeSincePause
     }
 
-
-
-
+    func reset() {
+        layer.speed = 0
+        layer.timeOffset = 0
+    }
 }
