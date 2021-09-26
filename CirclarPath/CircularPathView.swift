@@ -28,7 +28,7 @@ final class CircularPathView: UIView {
         super.init(coder: coder)
     }
 
-    func create(radius: CGFloat) {
+    func createCircularPath(radius: CGFloat) {
         // pathの設定
         let bezierPath = UIBezierPath(arcCenter: CGPoint(x: bounds.size.width / 2, y: bounds.size.height / 2), radius: radius, startAngle: startPoint, endAngle: endPoint, clockwise: true)
 
@@ -63,7 +63,7 @@ final class CircularPathView: UIView {
         circularProgressAnimation.toValue = 1.0
         circularProgressAnimation.fillMode = .forwards
         circularProgressAnimation.isRemovedOnCompletion = false
-        progressLayer.add(circularProgressAnimation, forKey: "progressAnim")
+        progressLayer.add(circularProgressAnimation, forKey: "progress")
     }
 
     func pauseAnimation(){

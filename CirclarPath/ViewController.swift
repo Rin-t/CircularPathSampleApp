@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let path: CircularPathView = {
+    private let path: CircularPathView = {
         let path = CircularPathView()
-        path.create(radius: 100)
+        path.createCircularPath(radius: 100)
         return path
     }()
 
@@ -19,10 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(path)
         path.center = view.center
-
         path.progressAnimation(duration: 10)
-
-
     }
 
 }
